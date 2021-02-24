@@ -6,7 +6,7 @@ import java.util.Objects;
 public class User {
         private String Login;
         private String Password;
-        private int LoginAttempt = 3;
+        private int LoginAttempts = 3;
         private boolean Blocked;
 
     public User() {
@@ -28,12 +28,12 @@ public class User {
         Password = password;
     }
 
-    public int getLoginAttempt() {
-        return LoginAttempt;
+    public int getLoginAttempts() {
+        return LoginAttempts;
     }
 
-    public void setLoginAttempt(int loginAttempt) {
-        LoginAttempt = loginAttempt;
+    public void setLoginAttempts(int loginAttempts) {
+        LoginAttempts = loginAttempts;
     }
 
     public boolean isBlocked() {
@@ -49,12 +49,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return LoginAttempt == user.LoginAttempt && Blocked == user.Blocked && Objects.equals(Login, user.Login) && Objects.equals(Password, user.Password);
+        return LoginAttempts == user.LoginAttempts && Blocked == user.Blocked && Objects.equals(Login, user.Login) && Objects.equals(Password, user.Password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Login, Password, LoginAttempt, Blocked);
+        return Objects.hash(Login, Password, LoginAttempts, Blocked);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class User {
         return "User{" +
                 "Login='" + Login + '\'' +
                 ", Password='" + Password + '\'' +
-                ", LoginAttempt=" + LoginAttempt +
+                ", LoginAttempts=" + LoginAttempts +
                 ", Blocked=" + Blocked +
                 '}';
     }
